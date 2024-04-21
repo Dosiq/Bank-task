@@ -25,7 +25,7 @@ public class CurrencyExchangeService {
     }
 
     private BigDecimal fetchAndSaveExchangeRate(String currency) {
-        BigDecimal rate = exchangeClient.fetchExchangeRate(currency, "USD"); // Псевдо-клиент для получения курса
+        BigDecimal rate = exchangeClient.fetchExchangeRate(currency, "USD");
         CurrencyExchange currencyExchange = new CurrencyExchange();
         currencyExchange.setCurrency(currency);
         currencyExchange.setRate(rate);

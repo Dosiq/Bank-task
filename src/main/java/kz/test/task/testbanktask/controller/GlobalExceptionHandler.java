@@ -14,9 +14,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(Exception e) {
-        // Логирование полной ошибки для внутреннего аудита
         logger.error("Internal server error: ", e);
-        // Возврат пользователю более общего сообщения
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("An unexpected internal server error occurred.");
     }

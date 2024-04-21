@@ -34,6 +34,7 @@ public class TransactionService {
         transaction.setSum(transactionDto.getSum());
         transaction.setExpenseCategory(transactionDto.getExpenseCategory());
         transaction.setDateTime(LocalDateTime.parse(transactionDto.getDatetime()));
+        transaction.setLimitExceeded(amountInUSD.compareTo(currentLimit.getLimitSum()) > 0);
 
         if (amountInUSD.compareTo(currentLimit.getLimitSum()) > 0) {
             transaction.setLimitExceeded(true);
